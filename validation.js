@@ -3,7 +3,7 @@ const Joi = require("@hapi/joi");
 
 const recommendationsValidation = (data) => {
     const schema = Joi.object({
-        titlesFromUser: Joi.array().items(Joi.string())
+        movieTitles: Joi.array().items(Joi.string()).required()
     })
     // Validate data received from request
     return schema.validate(data)
