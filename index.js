@@ -11,9 +11,10 @@ dotenv.config();
 let { features, labels, testFeatures, testLabels } = loadCSV('./data/tmdb_5000_movies/tmdb_5000_movies_edited.csv', {
     shuffle: false,
     splitTest: 2000,
-    dataColumns: ['budget'],
+    dataColumns: ['budget', 'genre_id', 'runtime'],
     labelColumns: ['revenue']
 });
+
 
 const regression = new LinearRegression(
     features,
