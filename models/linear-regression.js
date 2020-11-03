@@ -11,6 +11,7 @@ class LinearRegression {
       {
         learningRate: 0.1,
         iterations: 1000,
+        batchSize: 32,
       },
       options
     );
@@ -32,8 +33,21 @@ class LinearRegression {
   }
 
   train() {
+    const batchQuantity = Math.floor(
+      this.features.shape[0] / this.options.batchSize
+    );
+
     for (let i = 0; i < this.options.iterations; i++) {
-      this.gradientDescent();
+      for (let j = 0; j < batchQuantity; j++) {
+        const startIndex = j * this.options.batchSize;
+        const batchSize = this.options.batchSize;
+        const featureSlice = this.features.slice([startIndex, 0], [batchSize, -1]);
+
+        const labelSlice = this.labels.slice([startIndex, 0], [batchSize, -1])
+
+        this.gradientDescent(featureSlice, labelSlice);
+      }
+
       this.recordMSE();
       this.updateLearningRate();
     }
@@ -77,25 +91,28 @@ class LinearRegression {
 
   recordMSE() {
     const mse = this.features
-    .matMul(this.weights)
-    .sub(this.labels)
-    .pow(2)
-    .sum()
-    .div(this.features.shape[0])
-    .arraySync();
+      .matMul(this.weights)
+      .sub(this.labels)
+      .pow(2)
+      .sum()
+      .div(this.features.shape[0])
+      .arraySync();
 
     this.mseHistory.unshift(mse);
   }
 
-
   updateLearningRate() {
     if (this.mseHistory >= 2) {
-        if (this.mseHistory[0] > this.mseHistory[1]) {
-            this.options.learningRate /= 2;
-        } else {
-            this.options.learningRate *= 1.05;
-        }
+      if (this.mseHistory[0] > this.mseHistory[1]) {
+        this.options.learningRate /= 2;
+      } else {
+        this.options.learningRate *= 1.05;
+      }
     }
+  }
+
+  predict(observations) {
+      
   }
 }
 

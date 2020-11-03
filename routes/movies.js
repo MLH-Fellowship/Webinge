@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const { recommendationsValidation } = require("../validation");
-const { API_KEY } = require("../constants");
+const { recommendationsValidation } = require("../util/validation");
+const { API_KEY } = require("../util/constants");
 const axios = require("axios");
-const dynamicSort = require("../dynamicSort");
+const dynamicSort = require("../util/dynamicSort");
 
 router.get("/recommendations", async (req, res) => {
   try {

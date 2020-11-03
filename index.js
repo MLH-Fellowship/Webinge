@@ -3,8 +3,8 @@ const app = require('./app')
 const dotenv = require('dotenv')
 //require('@tensorflow/tfjs-node');
 const tf = require('@tensorflow/tfjs');
-const loadCSV = require('./load-csv');
-const LinearRegression = require("./linear-regression");
+const loadCSV = require('./util/load-csv');
+const LinearRegression = require("./models/linear-regression");
 
 dotenv.config();
 
@@ -20,8 +20,9 @@ const regression = new LinearRegression(
     features,
     labels,
     {
-        learningRate: .1,
-        iterations: 1000
+        learningRate: .01,
+        iterations: 100,
+        batchSize: 15
     }
 );
 
