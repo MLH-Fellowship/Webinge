@@ -6,6 +6,8 @@
         class="form-control"
         placeholder="your budget in dollars"
         type="number"
+        min="1"
+        step="0.01"
         required
       />
     </div>
