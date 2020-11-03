@@ -41,9 +41,12 @@ class LinearRegression {
       for (let j = 0; j < batchQuantity; j++) {
         const startIndex = j * this.options.batchSize;
         const batchSize = this.options.batchSize;
-        const featureSlice = this.features.slice([startIndex, 0], [batchSize, -1]);
+        const featureSlice = this.features.slice(
+          [startIndex, 0],
+          [batchSize, -1]
+        );
 
-        const labelSlice = this.labels.slice([startIndex, 0], [batchSize, -1])
+        const labelSlice = this.labels.slice([startIndex, 0], [batchSize, -1]);
 
         this.gradientDescent(featureSlice, labelSlice);
       }
@@ -112,7 +115,7 @@ class LinearRegression {
   }
 
   predict(observations) {
-      
+    return this.processFeatures(observations).matMul(this.weights);
   }
 }
 
