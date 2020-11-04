@@ -16,6 +16,7 @@ export default new Router({
       children: [
         {
           path: "results",
+          name: "prediction-result",
           component: PredictionResults
         }
       ],

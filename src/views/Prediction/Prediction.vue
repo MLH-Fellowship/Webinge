@@ -62,11 +62,17 @@ export default {
     async onSubmit(movieDetailsForm) {
       let budgetUrl = `api/movies/revenue-prediction/`;
 
+      let movieDetails = {
+                        budget: parseFloat(movieDetailsForm.budget),
+                        genre_id: 28,
+                        runtime: parseFloat(movieDetailsForm.runtime)
+                    }
+
       try {
-        const data = await apiService(budgetUrl, "POST", movieDetailsForm);
+        const data = await apiService(budgetUrl, "POST", movieDetails);
 
         await this.$router.push({
-          name: "search-results"
+          name: "prediction-result"
         });
 
         console.log(data);
