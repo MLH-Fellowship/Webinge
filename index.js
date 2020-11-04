@@ -3,7 +3,7 @@ const app = require('./app')
 const dotenv = require('dotenv')
 //require('@tensorflow/tfjs-node');
 
-
+app.use(cors());
 dotenv.config();
 
 const server = http.createServer(app)
