@@ -6,7 +6,7 @@ dotenv.config(); // reads the .env file
 
 // Middleware
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 
 // Import Routes
 const moviesRoute = require("./routes/movies");
