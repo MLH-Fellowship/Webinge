@@ -1,0 +1,32 @@
+{
+  "name": "webinge",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">\r \tWebinge\r </h1>",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MLH-Fellowship/Webinge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MLH-Fellowship/Webinge/issues"
+  },
+  "homepage": "https://github.com/MLH-Fellowship/Webinge#readme",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "@tensorflow/tfjs": "^2.7.0",
+    "@tensorflow/tfjs-node": "^2.7.0",
+    "axios": "^0.21.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.20",
+    "nodemon": "^2.0.6",
+    "shuffle-seed": "^1.1.6"
+  }
+}
