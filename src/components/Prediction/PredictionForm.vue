@@ -1,8 +1,8 @@
 <template>
-  <form @submit.prevent="onSubmit">
+  <form @submit.prevent="emitEvent">
     <div class="form-group mt-3">
       <input
-        v-model="movieDetailsForm.movieBudget"
+        v-model="movieDetailsForm.budget"
         class="form-control"
         placeholder="your budget in dollars"
         type="number"
@@ -13,7 +13,6 @@
     </div>
     <div class="form-group mt-3">
       <input
-        v-model="movieDetailsForm.movieGenre"
         class="form-control"
         placeholder="your movie's genre here"
         type="text"
@@ -21,49 +20,17 @@
       />
     </div>
     <div class="form-group mt-5">
-      <label for="release-month">release month</label>
-      <select
-        class="form-control"
-        id="release-month"
-        v-model="movieDetailsForm.movieReleaseMonth"
-      >
-        <option value="jan">
-          January
-        </option>
-        <option value="feb">
-          February
-        </option>
-        <option value="mar">
-          March
-        </option>
-        <option value="apr">
-          April
-        </option>
-        <option value="may">
-          May
-        </option>
-        <option value="jun">
-          June
-        </option>
-        <option value="jul">
-          July
-        </option>
-        <option value="aug">
-          August
-        </option>
-        <option value="sep">
-          September
-        </option>
-        <option value="oct">
-          October
-        </option>
-        <option value="nov">
-          November
-        </option>
-        <option value="dec">
-          Decemer
-        </option>
-      </select>
+      <div class="form-group mt-3">
+        <input
+          v-model="movieDetailsForm.runtime"
+          class="form-control"
+          placeholder="movie length. e.g 0.5 for 30mins movie and 1.20 for a 1hour 20mins movie"
+          type="number"
+          min="0.5"
+          step="0.01"
+          required
+        />
+      </div>
     </div>
     <button class="btn-block search-button" type="submit">
       <div class="text">
@@ -95,16 +62,16 @@ export default {
   data() {
     return {
       movieDetailsForm: {
-        movieBudget: null,
-        movieGenre: null,
-        movieReleaseMonth: null
+        budget: null,
+        genre_id: 28,
+        runtime: null
       }
     };
   },
 
   methods: {
-    onSubmit() {
-      this.$emit("submitFormData");
+    emitEvent() {
+      this.$emit("submitFormData", this.movieDetailsForm);
     }
   }
 };

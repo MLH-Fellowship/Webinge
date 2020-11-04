@@ -59,15 +59,17 @@ export default {
   },
 
   methods: {
-    async onSubmit() {
-      let budgetUrl = ``;
+    async onSubmit(movieDetailsForm) {
+      let budgetUrl = `api/movies/revenue-prediction/`;
 
       try {
-        const data = await apiService(budgetUrl, "POST", this.movieDetailsForm);
+        const data = await apiService(budgetUrl, "POST", movieDetailsForm);
 
         await this.$router.push({
           name: "search-results"
         });
+
+        console.log(data);
       } catch {
         console.error("Something bad happened during the API call");
       }
