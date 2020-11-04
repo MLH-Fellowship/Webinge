@@ -59,7 +59,7 @@ router.get("/recommendations", async (req, res) => {
   }
 });
 
-router.get("/revenue-prediction", async (req, res) => {
+router.post("/revenue-prediction", async (req, res) => {
   const { error, value } = revenuePredictionValidation(req.body);
   if (error) return res.status(400).send(error);
 
