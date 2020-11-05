@@ -17,7 +17,8 @@ export default new Router({
         {
           path: "results",
           name: "prediction-result",
-          component: PredictionResults
+          component: PredictionResults,
+          props: true
         }
       ],
       meta: {

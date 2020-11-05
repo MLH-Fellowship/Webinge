@@ -12,12 +12,16 @@
       />
     </div>
     <div class="form-group mt-3">
-      <input
-        class="form-control"
-        placeholder="your movie's genre here"
-        type="text"
-        required
-      />
+      <select class="form-control" v-model="movieDetailsForm.genre_id">
+        <option value="28">Action</option>
+        <option value="12">Adventure</option>
+        <option value="14">Fantasy</option>
+        <option value="16">Animation</option>
+        <option value="87">Science Fiction</option>
+        <option value="18">Drama</option>
+        <option value="53">AnimationThriller</option>
+        <option value="10">Family</option>
+      </select>
     </div>
     <div class="form-group mt-5">
       <div class="form-group mt-3">
@@ -63,7 +67,7 @@ export default {
     return {
       movieDetailsForm: {
         budget: null,
-        genre_id: 28,
+        genre_id: "pick a movie genre",
         runtime: null
       }
     };

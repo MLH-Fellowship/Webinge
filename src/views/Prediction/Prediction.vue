@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="row px-3">
+    <div class="row mt-5 text-center" @click="close">
       <div class="col-md">
         <router-view></router-view>
       </div>
@@ -61,24 +61,31 @@ export default {
   methods: {
     async onSubmit(movieDetailsForm) {
       let budgetUrl = `api/movies/revenue-prediction/`;
+      let runtimeInMinutes = parseFloat(movieDetailsForm.runtime) * 60;
 
       let movieDetails = {
-                        budget: parseFloat(movieDetailsForm.budget),
-                        genre_id: 28,
-                        runtime: parseFloat(movieDetailsForm.runtime)
-                    }
+        budget: parseFloat(movieDetailsForm.budget),
+        genre_id: parseInt(movieDetailsForm.genre_id),
+        runtime: runtimeInMinutes
+      };
 
       try {
         const data = await apiService(budgetUrl, "POST", movieDetails);
 
         await this.$router.push({
-          name: "prediction-result"
+          name: "prediction-result",
+          params: {
+            predictedRevenue: data.predictedRevenue,
+            accuracy: data.accuracy
+          }
         });
-
-        console.log(data);
       } catch {
         console.error("Something bad happened during the API call");
       }
+    },
+
+    close() {
+      this.$router.back();
     }
   },
 
