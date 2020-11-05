@@ -10,7 +10,7 @@ const tf = require("@tensorflow/tfjs");
 const loadCSV = require("../util/load-csv");
 const LinearRegression = require("../models/linear-regression");
 
-router.get("/recommendations", async (req, res) => {
+router.post("/recommendations", async (req, res) => {
   try {
     const { error, value } = recommendationsValidation(req.body);
     if (error) return res.status(400).send(error);
