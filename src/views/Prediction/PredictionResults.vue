@@ -1,9 +1,11 @@
 <template>
   <modal name="my-first-modal" class=" text-center" @click="close">
     <div class="p-5">
-      <h3>predicted revenue: {{ predictedRevenue }}</h3>
-      <h3>accuracy of prediction: {{ accuracy }}</h3>
-      <a class="btn btn-primary" @click="close">Close</a>
+      <h1>Estimated Revenue</h1>
+      <h3>{{ lowerRange }} - {{ upperRange }}</h3>
+      <h3 v-if="isGoodInvestment">Good Investment</h3>
+      <h3 v-else>Bad Investment</h3>
+      <a class="btn btn-primary">Close</a>
     </div>
   </modal>
 </template>
@@ -22,13 +24,22 @@ export default {
     accuracy: {
       required: true,
       type: Number
+    },
+
+    isGoodInvestment: {
+      required: true,
+      type: Boolean
     }
   },
 
+  data() {
+    return {
+      upperRange: this.predictedRevenue + 1000,
+      lowerRange: this.predictedRevenue + 1000
+    };
+  },
+
   methods: {
-    close() {
-      this.$router.back();
-    },
     show() {
       this.$modal.show("my-first-modal");
     },

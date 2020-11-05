@@ -76,7 +76,9 @@ export default {
           name: "prediction-result",
           params: {
             predictedRevenue: data.predictedRevenue,
-            accuracy: data.accuracy
+            accuracy: data.accuracy,
+            isGoodInvestment:
+              movieDetails.budget < data.predictedRevenue ? true : false
           }
         });
       } catch {
