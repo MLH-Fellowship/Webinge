@@ -3,17 +3,13 @@
 </h1>
 
 <p align="center">
-	<i>Webinge recommends movies, tv-shows and games based on some information provided by the user</i>
+	<i>Webinge predicts the revenue a new movie or a game would generate and as well recommends movies and tv-shows based on some information provided by the user</i>
 </p>
 
 ## Project Descripttion
-TWebinge recommends movies, tv-shows and games based on some information provided by the user; 
-specifically, movies/tv-shows or games that the user had watched or played in the past.
-Just submit three movies or tv-shows you have watched in the past and our algorithm will recommend some
-really cool movies to you :smiley:
-And oh did I fail to mention that our algorithm could recommend games too ? Oh hell yeah!
+Webinge primarily predicts the revenue a new movie or a video game would generate based on its allocated budget, release month, and genre. The goal is to help movie and game producers easily estimate their return on investment. Webinge also recommends movies and tv-shows based on some information provided by the user; specifically, movies/tv-shows or games that the user had watched or played in the past. Just submit three movies or tv-shows you have watched in the past and our algorithm will recommend some really cool movies to you 😃
 
-If you like this repo, click the :star:
+If you like this repo, click the ⭐
 
 ## Project setup: Frontend
 ```
