@@ -20,26 +20,7 @@
   </div>
 </template>
 
-<style scoped>
-.card.movie-info-card {
-  margin-top: 20px;
-  font-size: 18px;
-  width: 100%;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
-  padding: 30px 20px;
-}
-
-.card.movie-info-card .sub-heading {
-  font-size: 26px;
-}
-
-.col-md {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-</style>
+<style scoped></style>
 
 <script>
 import { apiService } from "@/utils/api.service.js";

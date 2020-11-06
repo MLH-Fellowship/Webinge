@@ -17,3 +17,35 @@ input[type="number"] {
     padding: 5px 20px;
     margin: 20px 0 20px 0;
 }
+
+.card.movie-info-card {
+    margin-top: 20px;
+    font-size: 18px;
+    width: 100%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
+    padding: 30px 20px;
+  }
+  
+.card.movie-info-card .sub-heading {
+    font-size: 26px;
+}
+  
+.col-md {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search-button {
+    font-size: 24px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: lightcoral;
+    box-shadow: 0 9px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    color: white;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}

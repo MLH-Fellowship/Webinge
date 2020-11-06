@@ -44,20 +44,7 @@
   </form>
 </template>
 
-<style scoped>
-.search-button {
-  font-size: 24px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  background: lightcoral;
-  box-shadow: 0 9px 10px rgba(0, 0, 0, 0.15);
-  text-align: center;
-  color: white;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-}
-</style>
+<style scoped></style>
 
 <script>
 export default {
