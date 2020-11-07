@@ -39,7 +39,7 @@
 
 <script>
 export default {
-  name: "recommendation-form",
+  name: "movies-recommendation-form",
 
   data() {
     return {

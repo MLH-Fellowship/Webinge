@@ -4,8 +4,11 @@ import Router from "vue-router";
 import Prediction from "@/views/Prediction/Prediction.vue";
 import PredictionResults from "@/views/Prediction/PredictionResults.vue";
 
-import Recommendation from "@/views/Recommendation/Recommendation.vue";
+import MoviesRecommendation from "@/views/Recommendation/MoviesRecommendation.vue";
 import RecommendedMovies from "@/views/Recommendation/RecommendedMovies.vue";
+
+import SongsRecommendation from "@/views/Recommendation/SongsRecommendation.vue";
+import RecommendedSongs from "@/views/Recommendation/RecommendedSongs.vue";
 
 Vue.use(Router);
 
@@ -33,9 +36,20 @@ export default new Router({
     },
 
     {
-      path: "/recommendation",
-      name: "recommendation",
-      component: Recommendation,
+      path: "/movies-recommendation",
+      name: "movies-recommendation",
+      component: MoviesRecommendation,
+      meta: {
+        hideFooter: false,
+        hideBrand: false
+        // title: "prediction"
+      }
+    },
+    {
+      path: "/recommended-movies",
+      name: "recommended-movies",
+      component: RecommendedMovies,
+      props: true,
       meta: {
         hideFooter: false,
         hideBrand: false
@@ -44,9 +58,19 @@ export default new Router({
     },
 
     {
-      path: "/recommended-movies",
-      name: "recommended-movies",
-      component: RecommendedMovies,
+      path: "/songs-recommendation",
+      name: "songs-recommendation",
+      component: SongsRecommendation,
+      meta: {
+        hideFooter: false,
+        hideBrand: false
+        // title: "prediction"
+      }
+    },
+    {
+      path: "/recommended-songs",
+      name: "recommended-songs",
+      component: RecommendedSongs,
       props: true,
       meta: {
         hideFooter: false,

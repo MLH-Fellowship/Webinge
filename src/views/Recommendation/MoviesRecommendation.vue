@@ -7,7 +7,7 @@
             Tell us about three movies you've watched
           </div>
           <div class="card-body mb-5">
-            <RecommendationForm @submitFormData="onSubmit" />
+            <MoviesRecommendationForm @submitFormData="onSubmit" />
           </div>
         </div>
       </div>
@@ -19,10 +19,10 @@
 
 <script>
 import { apiService } from "@/utils/api.service.js";
-import RecommendationForm from "@/components/Recommendation/RecommendationForm.vue";
+import MoviesRecommendationForm from "@/components/Recommendation/MoviesRecommendationForm.vue";
 
 export default {
-  name: "recommendation",
+  name: "movies-recommendation",
 
   data() {
     return {
@@ -31,7 +31,7 @@ export default {
   },
 
   components: {
-    RecommendationForm
+    MoviesRecommendationForm
   },
 
   methods: {
@@ -59,7 +59,7 @@ export default {
   },
 
   mounted: function() {
-    document.title = "Webinge | Recommendations";
+    document.title = "Webinge | Movies Recommendations";
   }
 };
 </script>
