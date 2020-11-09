@@ -14,7 +14,7 @@
         <Song
           :title="song.title"
           :author="song.subtitle"
-          :image="song.coverart"
+          :image="song.images.coverart"
         />
       </div>
     </div>

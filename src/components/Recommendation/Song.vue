@@ -1,7 +1,7 @@
 <template>
   <div class="card movie-info-card">
     <div class="card-body mb-5">
-      <img :alt="title" :src="image" class="song-image" />
+      <img :alt="title" :src="image_url" class="song-image" />
       <h4 class="mt-4">{{ title }}</h4>
       <small class="mt-2"> {{ author }} </small>
     </div>
@@ -23,6 +23,12 @@ export default {
     title: String,
     author: String,
     image: String
+  },
+
+  data() {
+    return {
+      image_url: this.image
+    };
   },
 
   mounted: function() {
