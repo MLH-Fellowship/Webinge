@@ -1,23 +1,9 @@
 <template>
   <div class="card movie-info-card">
     <div class="card-body mb-5">
-      <div class="row px-2">
-        <div class="col-md-4 text-left">
-          <img :alt="title" :src="image_url" class="movie-image" />
-          <h4 class="mt-4">{{ title }}</h4>
-        </div>
-
-        <div class="col-md-8 col-12 text-left px-md-5">
-          <div class="mt-3">
-            <small class="bold"> Released: {{ release_date }} </small>
-          </div>
-          <div class="mt-3">
-            <small>
-              {{ overview }}
-            </small>
-          </div>
-        </div>
-      </div>
+      <img :alt="title" :src="image" class="song-image" />
+      <h4 class="mt-4">{{ title }}</h4>
+      <small class="mt-2"> {{ author }} </small>
     </div>
   </div>
 </template>
@@ -35,16 +21,10 @@ export default {
   name: "recommended-movies",
   props: {
     title: String,
-    image: String,
-    overview: String,
-    release_date: String
+    author: String,
+    image: String
   },
 
-  data() {
-    return {
-      image_url: "https://image.tmdb.org/t/p/w600_and_h900_bestv2" + this.image
-    };
-  },
   mounted: function() {
     document.title = "Webinge | Recommended-Movies";
   }
