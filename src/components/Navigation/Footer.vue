@@ -1,31 +1,9 @@
 <template>
-  <div class="my-footer text-center mt-5 py-1 shadow">
+  <div class="my-footer text-center hero-text-first py-1 shadow">
     <div class="row  m-4">
       <div class="col-12">
         <p>
-          Made with
-          <i class="fa fa-heart" aria-hidden="true"></i>
-          by Team Webinge✨
-        </p>
-      </div>
-
-      <div class="col-12">
-        <p>
-          <a
-            target="_blank"
-            href="https://nyior-clement.netlify.app/"
-            class="mr-2"
-          >
-            Nyior Clement
-          </a>
-
-          <a target="_blank" href="" class="ml-2">
-            Laurell
-          </a>
-
-          <a target="_blank" href="" class="ml-2">
-            Kyal
-          </a>
+          Made by Team Webinge
         </p>
       </div>
     </div>

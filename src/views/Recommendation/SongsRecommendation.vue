@@ -1,11 +1,11 @@
 <template>
-  <div class="container">
+  <div class="container hero-text-second">
     <div class="row px-3">
       <div class="col-md-6 ml-md-auto mr-md-auto col-12">
         <div class="card movie-info-card">
-          <div class="sub-heading text-center">
+          <h3 class="sub-heading">
             Tell us about one of your favourite songs
-          </div>
+          </h3>
           <div class="card-body mb-5">
             <SongsRecommendationForm @submitSong="onSubmit" />
           </div>

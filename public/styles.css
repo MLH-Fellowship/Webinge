@@ -18,6 +18,25 @@ input[type="number"] {
     margin: 20px 0 20px 0;
 }
 
+h4{
+ font-size: 2.5rem;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+.bold{
+    font-weight: bolder;
+}
+
+.green-txt{
+    color: #007f37;
+}
+
+.red-txt{
+    color: #e00029;
+}
 .card.movie-info-card {
     margin-top: 20px;
     font-size: 18px;
@@ -29,23 +48,74 @@ input[type="number"] {
 .card.movie-info-card .sub-heading {
     font-size: 26px;
 }
-  
-.col-md {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+
+.btn{
+	letter-spacing: 1px;
+	background-color: black;
+	color: white !important;
+	font-weight: bold;
+	font-size: 2rem;
+	text-align: center;
 }
 
-.search-button {
-    font-size: 24px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    background: lightcoral;
-    box-shadow: 0 9px 10px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    color: white;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
+.cta-btn{
+	width: 18rem;
+	height: 4.4rem;
 }
+
+.heading{
+	font-size: 5.0rem;	
+	letter-spacing: 2px;
+}
+
+.sub-heading{
+	font-size: 3.0rem;	
+	letter-spacing: 2px;
+}
+
+.hero-text-first{
+	margin-top: 20rem;
+}
+
+.margin-top{
+	margin-top: 10rem;
+}
+
+.hero-text-second{
+	margin-top: 15rem;
+}
+
+small{
+	font-size: 1.4rem;
+	letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 600px) {
+	.heading{
+		font-size: 3.5rem;	
+		letter-spacing: 3px;
+	}
+
+	.sub-heading{
+		font-size: 2.5rem;	
+		letter-spacing: 2px;
+	}
+
+	h3{
+		font-size: 2.0rem;
+    }
+    
+	.hero-text-first{
+		margin-top: 17rem;
+	}
+
+	.hero-text-second{
+		margin-top: 10rem;
+	}
+}
+
+
+
+
+
+

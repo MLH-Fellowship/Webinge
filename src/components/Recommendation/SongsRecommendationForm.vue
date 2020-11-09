@@ -18,7 +18,7 @@
         required
       />
     </div>
-    <button class="btn-block search-button" type="submit">
+    <button class="btn-block btn" type="submit">
       <div class="text">
         Submit
       </div>

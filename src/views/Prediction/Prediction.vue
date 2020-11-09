@@ -1,18 +1,18 @@
 <template>
-  <div class="container">
+  <div class="container hero-text-second">
     <div class="row px-3">
       <div class="col-md-6 ml-md-auto mr-md-auto col-12">
         <div class="card movie-info-card">
-          <div class="sub-heading text-center">
-            Tell us about your next movie
-          </div>
+          <h3 class="sub-heading text-center">
+            Tell us About Your Next Movie
+          </h3>
           <div class="card-body mb-5">
             <PredictionForm @submitFormData="onSubmit" />
           </div>
         </div>
       </div>
     </div>
-    <div class="row mt-5 text-center" @click="close">
+    <div class="row mt-5 text-center">
       <div class="col-md">
         <router-view></router-view>
       </div>
@@ -62,13 +62,9 @@ export default {
               movieDetails.budget < data.predictedRevenue ? true : false
           }
         });
-      } catch {
-        console.error("Something bad happened during the API call");
+      } catch (error) {
+        console.log(error);
       }
-    },
-
-    close() {
-      this.$router.back();
     }
   },
 

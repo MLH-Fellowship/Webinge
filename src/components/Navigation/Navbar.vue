@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg py-3 px-5" id="header">
+  <nav class="navbar navbar-expand-lg py-3 px-5 shadow" id="header">
     <a href="#" @click="back">
       <img
         src="../../assets/svg/icons/arrow-left-solid.svg"
@@ -58,14 +58,14 @@ a {
 }
 .nav-back-button {
   width: 20px;
-  color: white;
+  color: black;
   filter: invert(1);
   margin-top: -6px;
 }
 .navbar-brand {
   font-weight: bold;
   font-size: 3rem;
-  color: white;
+  color: black;
 }
 
 .fa-long-arrow-left {

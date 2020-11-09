@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container hero-text-second">
     <div class="row px-3">
       <div class="col-md-6 ml-md-auto mr-md-auto col-12">
         <div class="card movie-info-card">
@@ -48,7 +48,7 @@ export default {
           }
         });
         console.log(data);
-      } catch {
+      } catch (error) {
         console.error("Something bad happened during the API call");
       }
     },

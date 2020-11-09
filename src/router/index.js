@@ -10,6 +10,8 @@ import RecommendedMovies from "@/views/Recommendation/RecommendedMovies.vue";
 import SongsRecommendation from "@/views/Recommendation/SongsRecommendation.vue";
 import RecommendedSongs from "@/views/Recommendation/RecommendedSongs.vue";
 
+import Home from "@/views/Home/Home.vue";
+
 Vue.use(Router);
 
 export default new Router({
@@ -18,6 +20,12 @@ export default new Router({
   routes: [
     {
       path: "/",
+      name: "home",
+      component: Home
+    },
+
+    {
+      path: "/prediction",
       name: "prediction",
       component: Prediction,
       children: [
@@ -31,7 +39,6 @@ export default new Router({
       meta: {
         hideFooter: false,
         hideBrand: false
-        // title: "prediction"
       }
     },
 
