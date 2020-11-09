@@ -13,10 +13,11 @@ app.use(express.json());
 
 // Import Routes
 const moviesRoute = require("./routes/movies");
+const videoGamesRoute = require("./routes/video-games")
 
 // Route Middlewares
 app.use("/api/movies", moviesRoute);
-
+app.use("/api/video-games", videoGamesRoute)
 
 
 //console.log(predictedRevenue)
