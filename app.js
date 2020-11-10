@@ -3,7 +3,10 @@ const app = express();
 const cors = require('cors')
 const dotenv = require('dotenv');
 dotenv.config(); // reads the .env file
+const ModelCreation = require("./util/ModelCreation");
 
+
+ModelCreation.staticConstructor();
 
 app.use(cors());
 

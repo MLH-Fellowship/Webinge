@@ -65,10 +65,10 @@ class LinearRegression {
     //predictions.print();
 
     const res = testLabels.sub(predictions).pow(2).sum().arraySync();
-    console.log(res);
+    //console.log(res);
 
     const tot = testLabels.sub(testLabels.mean()).pow(2).sum().arraySync();
-    console.log(tot);
+    //console.log(tot);
     return 1 - res / tot;
   }
 

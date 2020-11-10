@@ -6,9 +6,8 @@ const {
 const { API_KEY } = require("../util/constants");
 const axios = require("axios");
 const dynamicSort = require("../util/dynamicSort");
-const tf = require("@tensorflow/tfjs");
-const loadCSV = require("../util/load-csv");
-const LinearRegression = require("../models/linear-regression");
+const ModelCreation = require("../util/ModelCreation");
+
 
 router.post("/recommendations", async (req, res) => {
   try {
@@ -63,36 +62,14 @@ router.post("/revenue-prediction", async (req, res) => {
   const { error, value } = revenuePredictionValidation(req.body);
   if (error) return res.status(400).send(error);
 
-  let { features, labels, testFeatures, testLabels } = loadCSV(
-    "./data/tmdb_5000_movies/tmdb_5000_movies_edited.csv",
-    {
-      shuffle: false,
-      splitTest: 2000,
-      dataColumns: ["budget", "genre_id", "runtime"],
-      labelColumns: ["revenue"],
-    }
-  );
-
-  const regression = new LinearRegression(features, labels, {
-    learningRate: 0.01,
-    iterations: 100,
-    batchSize: 16,
-  });
-
-  regression.train();
-
-  const r2 = regression.test(testFeatures, testLabels);
-
-  //console.log("Accuracy Rating (negative = bad accuracy, 1 = perfect): ", r2);
-
-  const predictedRevenue = regression
+  const predictedRevenue = ModelCreation.moviesRegression
     .predict([
       //budget genre id runtime
       [req.body.budget, req.body.genre_id, req.body.runtime],
     ])
     .arraySync();
 
-  return res.send({ predictedRevenue: predictedRevenue[0][0], accuracy: r2 });
+  return res.send({ predictedRevenue: predictedRevenue[0][0], accuracy: ModelCreation.moviesAccuracy });
 });
 
 async function getIdsForMoviesGivenArray(req, movieIds, errors) {
