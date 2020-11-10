@@ -14,8 +14,7 @@ const recommendationsValidationV2 = (data) => {
       .items(
         Joi.object({
           title: Joi.string().required(),
-          releaseYear: Joi.string().required(),
-          genreIds: Joi.array().items(Joi.number()).required()
+          releaseYear: Joi.string().required()
         })
       )
       .required(),
