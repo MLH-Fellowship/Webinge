@@ -14,7 +14,7 @@ router.post("/global-sales", async (req, res) => {
     ])
     .arraySync();
 
-  return res.send({ predictedSales: predictedSales[0][0], accuracy: r2 });
+  return res.send({ predictedSales: predictedSales[0][0], accuracy: ModelCreation.videoGamesAccuracy });
 });
 
 module.exports = router;
