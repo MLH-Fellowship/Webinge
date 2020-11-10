@@ -1,5 +1,5 @@
 
-// This function sorts an array of objects by the given property in ascending order
+// This function sorts an array of objects by the given property in descending order
 function dynamicSort(property) {
     var sortOrder = 1;
     if(property[0] === "-") {
@@ -10,7 +10,7 @@ function dynamicSort(property) {
         /* next line works with strings and numbers, 
          * and you may want to customize it to your needs
          */
-        var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+        var result = (a[property] > b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
         return result * sortOrder;
     }
 }
