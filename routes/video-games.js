@@ -14,11 +14,11 @@ router.post("/global-sales", async (req, res) => {
   // if (error) return res.status(400).send(error);
 
   let { features, labels, testFeatures, testLabels } = loadCSV(
-    "./data/video-games/video_game_sales.csv",
+    "./data/video-games/video_game_sales_short.csv",
     {
       shuffle: true,
-      splitTest: 8000,
-      dataColumns: ["platform_id", "genre_id"],
+      splitTest: 5,
+      dataColumns: ["platform_id", "genre_id", "age_rating_id", "developer_id"],
       labelColumns: ["global_sales"],
     }
   );
@@ -28,8 +28,8 @@ router.post("/global-sales", async (req, res) => {
 
   const regression = new LinearRegression(features, labels, {
     learningRate: 0.01,
-    iterations: 100,
-    batchSize: 10
+    iterations: 10,
+    batchSize: 1
   });
 
   regression.train();
@@ -40,8 +40,8 @@ router.post("/global-sales", async (req, res) => {
 
   const predictedSales = regression
     .predict([
-      //budget genre id runtime
-      [req.body.platform_id, req.body.genre_id],
+      //budget platform id, genre id, age rating id, developer id
+      [req.body.platform_id, req.body.genre_id, req.body.age_rating_id, req.body.developer_id],
     ])
     .arraySync();
 
