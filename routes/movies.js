@@ -51,11 +51,10 @@ router.post("/recommendations-v2", async (req, res) => {
       // Get Id for movie
       let title = movieFromUser.title;
       let releaseYear = movieFromUser.releaseYear;
-      let genreIds = movieFromUser.genreIds;
       
 
 
-      let movieIds = await getMovieIds(title, releaseYear, genreIds);
+      let movieIds = await getMovieIds(title, releaseYear);
       recommendedMovies = await getRecommendations(movieIds);
     }
 
@@ -107,7 +106,7 @@ async function getRecommendations(movieIds) {
   return recommendations;
 }
 
-async function getMovieIds(title, releaseYear, genreIds) {
+async function getMovieIds(title, releaseYear) {
   let movieIds = [];
   const movieSearchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${title}`;
 
@@ -116,11 +115,9 @@ async function getMovieIds(title, releaseYear, genreIds) {
 
   results.forEach((result) => {
     let releaseYearOfResult = result.release_date.substring(0, 4);
-    let genreIdsOfResult = result.genre_ids;
 
     if (
-      releaseYearOfResult == releaseYear &&
-      arraysEqual(genreIdsOfResult, genreIds)
+      releaseYearOfResult == releaseYear
     ) {
       movieIds.push(result.id);
     }
