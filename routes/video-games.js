@@ -9,29 +9,27 @@ const tf = require("@tensorflow/tfjs");
 const loadCSV = require("../util/load-csv");
 const LinearRegression = require("../models/linear-regression");
 
-router.post("/revenue-prediction", async (req, res) => {
-  const { error, value } = revenuePredictionValidation_VG(req.body);
-  if (error) return res.status(400).send(error);
+router.post("/global-sales", async (req, res) => {
+  // const { error, value } = revenuePredictionValidation_VG(req.body);
+  // if (error) return res.status(400).send(error);
 
   let { features, labels, testFeatures, testLabels } = loadCSV(
-    "./data/video-games/video_game_sales_december_2016_edited.csv",
+    "./data/video-games/video_game_sales.csv",
     {
-      shuffle: false,
-      splitTest: 2000,
+      shuffle: true,
+      splitTest: 8000,
       dataColumns: ["platform_id", "genre_id"],
       labelColumns: ["global_sales"],
     }
   );
 
-  //console.log(features)
-  //console.log(labels)
-  //console.log(testFeatures)
-  //console.log(testLabels)
+  console.log(features)
+  console.log(labels)
 
   const regression = new LinearRegression(features, labels, {
     learningRate: 0.01,
     iterations: 100,
-    batchSize: 100
+    batchSize: 10
   });
 
   regression.train();
