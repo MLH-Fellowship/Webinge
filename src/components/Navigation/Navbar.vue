@@ -1,13 +1,6 @@
 <template>
-  <nav 
-     class="navbar navbar-expand-lg py-3 fixed px-5 shadow"
-     id="header"
-  >
-    <a 
-         href="#"
-         @click="back"
-         v-if="hide_nav_brand"
-    >
+  <nav class="navbar navbar-expand-lg py-3 fixed px-5 shadow" id="header">
+    <a href="#" @click="back" v-if="hide_nav_brand">
       <i class="fa fa-arrow-left" aria-hidden="true"></i>
     </a>
 
@@ -63,7 +56,7 @@ a {
   color: #007f37;
 }
 
-.fa-arrow-left{
+.fa-arrow-left {
   font-size: 2.5rem;
   color: #007f37;
   margin-top: 0.5rem;

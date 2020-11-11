@@ -24,19 +24,19 @@
       </div>
 
       <div class="col-md-6 col-12 text-right">
-          <img
-                src="../../assets/svg/illustrations/projections.svg"
-                class="illustration"
-            />
+        <img
+          src="../../assets/svg/illustrations/projections.svg"
+          class="illustration"
+        />
       </div>
     </div>
 
     <div class="row px-3 hero-text-second">
       <div class="col-md-6 col-12 text-left">
-          <img
-                src="../../assets/svg/illustrations/search.svg"
-                class="illustration"
-            />
+        <img
+          src="../../assets/svg/illustrations/search.svg"
+          class="illustration"
+        />
       </div>
 
       <div class="col-md-6 ml-md-auto col-12 px-md-5 px-2">
@@ -66,9 +66,7 @@
 
     <div class="row text-center">
       <div class="col-md-6 col-12">
-        <modal 
-            name="prediction-modal"
-        >
+        <modal name="prediction-modal">
           <div class="margin-top px-5 mx-5">
             <div>
               <router-link to="songs-recommendation">
@@ -97,10 +95,10 @@
 </template>
 
 <style scoped>
-.illustration{
-    width: 450px;
-    height: 450px;
-    margin: 5px;
+.illustration {
+  width: 450px;
+  height: 450px;
+  margin: 5px;
 }
 </style>
 

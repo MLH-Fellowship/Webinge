@@ -44,13 +44,13 @@ export default {
   methods: {
     emitEvent() {
       let movies = {
-          "movies": [
-                {
-                    "title": this.title,
-                    "releaseYear": this.releaseYear
-                }
-            ]
-        }
+        movies: [
+          {
+            title: this.title,
+            releaseYear: this.releaseYear
+          }
+        ]
+      };
 
       this.$emit("submitFormData", movies);
     }

@@ -1,17 +1,11 @@
 <template>
   <div class="container hero-text-second">
-    <div 
-        class="row px-3 text-center mb-5"
-        v-if="isLoading"
-    >
+    <div class="row px-3 text-center mb-5" v-if="isLoading">
       <div class="col-md-6 ml-md-auto mr-md-auto col-12">
-         <Loader />
+        <Loader />
       </div>
     </div>
-    <div 
-        class="row px-3"
-        v-else
-    >
+    <div class="row px-3" v-else>
       <div class="col-md-6 ml-md-auto mr-md-auto col-12">
         <div class="card movie-info-card">
           <h3 class="sub-heading text-center">
@@ -44,7 +38,7 @@ export default {
   data() {
     return {
       error: null,
-      isLoading: false,
+      isLoading: false
     };
   },
 
@@ -55,7 +49,7 @@ export default {
 
   methods: {
     async onSubmit(movieDetailsForm) {
-      this.isLoading=true;
+      this.isLoading = true;
       let budgetUrl = `api/movies/revenue-prediction/`;
       let runtimeInMinutes = parseFloat(movieDetailsForm.runtime) * 60;
 
@@ -68,7 +62,7 @@ export default {
       try {
         const data = await apiService(budgetUrl, "POST", movieDetails);
 
-        this.isLoading=false;
+        this.isLoading = false;
         await this.$router.push({
           name: "prediction-result",
           params: {
