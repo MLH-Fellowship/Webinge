@@ -14,6 +14,10 @@ img {
   width: 300px;
   filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.09));
 }
+
+.card{
+  max-height: 400px;
+}
 </style>
 
 <script>

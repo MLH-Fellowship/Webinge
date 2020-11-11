@@ -1,17 +1,19 @@
 <template>
-  <nav class="navbar navbar-expand-lg py-3 px-5 shadow" id="header">
-    <a href="#" @click="back">
-      <img
-        src="../../assets/svg/icons/arrow-left-solid.svg"
-        class="nav-back-button "
-        alt="Back"
-        v-if="hide_nav_brand"
-      />
+  <nav 
+     class="navbar navbar-expand-lg py-3 fixed px-5 shadow"
+     id="header"
+  >
+    <a 
+         href="#"
+         @click="back"
+         v-if="hide_nav_brand"
+    >
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
     </a>
 
-    <p v-if="hide_nav_brand" class="mt-2 title">
+    <h4 v-if="hide_nav_brand" class="mt-3 title">
       {{ title }}
-    </p>
+    </h4>
 
     <router-link
       :to="{ name: 'home' }"
@@ -54,23 +56,17 @@ export default {
 <style scoped>
 a {
   text-decoration: none;
-  color: white;
-}
-.nav-back-button {
-  width: 20px;
-  color: black;
-  filter: invert(1);
-  margin-top: -6px;
 }
 .navbar-brand {
   font-weight: bold;
   font-size: 3rem;
-  color: black;
+  color: #007f37;
 }
 
-.fa-long-arrow-left {
-  font-size: 1rem;
-  cursor: pointer;
+.fa-arrow-left{
+  font-size: 2.5rem;
+  color: #007f37;
+  margin-top: 0.5rem;
 }
 
 #header {
@@ -97,7 +93,6 @@ a {
 }
 .title {
   margin-left: 40%;
-  font-size: 2.5rem;
 }
 @media screen and (max-width: 600px) {
   .title {

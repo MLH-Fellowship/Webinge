@@ -2,12 +2,12 @@
   <div class="container hero-text-second">
     <div class="row px-3">
       <div class="col-md-12 mb-5 text-center">
-        <h3 class="heading">You Should Checkout These Songs</h3>
+        <h3 class="sub-heading">You Should Checkout These Songs</h3>
       </div>
     </div>
-    <div class="row px-3">
+    <div class="row ">
       <div
-        class="col-md-4 col-12 text-left px-2 mx-2"
+        class="col-md-4 col-12 text-left"
         v-for="song in recommendedSongs"
         :key="song.id"
       >

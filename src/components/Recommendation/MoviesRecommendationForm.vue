@@ -2,28 +2,20 @@
   <form @submit.prevent="emitEvent">
     <div class="form-group mt-3">
       <input
-        v-model="firstMovie"
+        v-model="title"
         class="form-control"
-        placeholder="title of first movie here"
+        placeholder="the movie title here"
         type="text"
         required
       />
     </div>
     <div class="form-group mt-3">
       <input
-        v-model="secondMovie"
+        v-model="releaseYear"
         class="form-control"
-        placeholder="title of second movie here"
-        type="text"
-        required
-      />
-    </div>
-    <div class="form-group mt-3">
-      <input
-        v-model="thirdMovie"
-        class="form-control"
-        placeholder="title of third movie here"
-        type="text"
+        placeholder="the year movie was released"
+        type="number"
+        min="1000"
         required
       />
     </div>
@@ -43,8 +35,8 @@ export default {
 
   data() {
     return {
-      firstMovie: null,
-      secondMovie: null,
+      title: null,
+      releaseYear: null,
       thirdMovie: null
     };
   },
@@ -52,8 +44,14 @@ export default {
   methods: {
     emitEvent() {
       let movies = {
-        movieTitles: [this.firstMovie, this.secondMovie, this.thirdMovie]
-      };
+          "movies": [
+                {
+                    "title": this.title,
+                    "releaseYear": this.releaseYear
+                }
+            ]
+        }
+
       this.$emit("submitFormData", movies);
     }
   }

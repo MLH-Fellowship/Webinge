@@ -1,7 +1,18 @@
 <template>
   <div class="container hero-text-second">
-    <div class="row px-3">
+    <div 
+        class="row px-3 text-center mb-5"
+        v-if="isLoading"
+    >
       <div class="col-md-6 ml-md-auto mr-md-auto col-12">
+         <Loader />
+      </div>
+    </div>
+    <div 
+        class="row px-3"
+        v-else
+    >
+      <div class="col-md-6 ml-md-auto mr-md-auto col-12 text-center">
         <div class="card movie-info-card">
           <h3 class="sub-heading">
             Tell us about one of your favourite songs
@@ -15,27 +26,33 @@
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+    
+</style>
 
 <script>
 import { shazamApiService } from "@/utils/api.service.js";
 import SongsRecommendationForm from "@/components/Recommendation/SongsRecommendationForm.vue";
+import Loader from "@/components/Utils/Loader.vue";
 
 export default {
   name: "songs-recommendation",
 
   data() {
     return {
-      error: null
+      error: null,
+      isLoading: false,
     };
   },
 
   components: {
-    SongsRecommendationForm
+    SongsRecommendationForm,
+    Loader
   },
 
   methods: {
     async onSubmit(song) {
+      this.isLoading=true;
       let searchUrl = `search`;
       let params = {
         term: song.title,
@@ -54,22 +71,23 @@ export default {
           if (
             element.subtitle.toLowerCase().includes(song.author.toLowerCase())
           ) {
-            searchUrl = `songs/list-recommendations`;
-            params = { key: element.key, locale: "en-US" };
-            data = await shazamApiService(searchUrl, params);
+                searchUrl = `songs/list-recommendations`;
+                params = { key: element.key, locale: "en-US" };
+                data = await shazamApiService(searchUrl, params);
 
-            await this.$router.push({
-              name: "recommended-songs",
-              params: {
-                recommendedSongs: data.tracks
-              }
-            });
+                this.isLoading=false;
+                await this.$router.push({
+                name: "recommended-songs",
+                params: {
+                    recommendedSongs: data.tracks
+                }
+                });
 
-            console.log(data.tracks);
+                console.log(data.tracks);
           }
         }
       } catch (err) {
-        console.log(err);
+            console.log(err);
       }
     },
 

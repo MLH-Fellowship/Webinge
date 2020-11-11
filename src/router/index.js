@@ -37,8 +37,8 @@ export default new Router({
         }
       ],
       meta: {
-        hideFooter: false,
-        hideBrand: false
+        hideBrand: true,
+        title: "revenue prediction"
       }
     },
 
@@ -47,9 +47,8 @@ export default new Router({
       name: "movies-recommendation",
       component: MoviesRecommendation,
       meta: {
-        hideFooter: false,
-        hideBrand: false
-        // title: "prediction"
+        hideBrand: true,
+        title: "search movies"
       }
     },
     {
@@ -58,9 +57,8 @@ export default new Router({
       component: RecommendedMovies,
       props: true,
       meta: {
-        hideFooter: false,
-        hideBrand: false
-        // title: "prediction"
+        hideBrand: true,
+        title: "recommended movies"
       }
     },
 
@@ -69,9 +67,8 @@ export default new Router({
       name: "songs-recommendation",
       component: SongsRecommendation,
       meta: {
-        hideFooter: false,
-        hideBrand: false
-        // title: "prediction"
+        hideBrand: true,
+        title: "search songs"
       }
     },
     {
@@ -80,9 +77,8 @@ export default new Router({
       component: RecommendedSongs,
       props: true,
       meta: {
-        hideFooter: false,
-        hideBrand: false
-        // title: "prediction"
+        hideBrand: true,
+        title: "recommended songs"
       }
     }
   ]

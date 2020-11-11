@@ -1,11 +1,11 @@
 <template>
-  <div class="container hero-text-first">
-    <div class="row px-3">
-      <div class="col-md-6 mr-md-auto col-12 px-md-5 px-2">
+  <div class="container">
+    <div class="row px-3 hero-text-second">
+      <div class="col-md-6 col-12 px-md-5 px-2">
         <h3 class="heading">
           Prediction
         </h3>
-        <h3 class="sub-heading text-muted mt-2">
+        <h3 class="sub-heading mt-2">
           Predict The Revenue a Movie Will Generate
         </h3>
         <h3 class="text-muted mt-5">
@@ -23,17 +23,27 @@
         </router-link>
       </div>
 
-      <div class="col-md-6 col-12 px-md-5 px-2"></div>
+      <div class="col-md-6 col-12 text-right">
+          <img
+                src="../../assets/svg/illustrations/projections.svg"
+                class="illustration"
+            />
+      </div>
     </div>
 
     <div class="row px-3 hero-text-second">
-      <div class="col-md-6 col-12 px-md-5 px-2"></div>
+      <div class="col-md-6 col-12 text-left">
+          <img
+                src="../../assets/svg/illustrations/search.svg"
+                class="illustration"
+            />
+      </div>
 
       <div class="col-md-6 ml-md-auto col-12 px-md-5 px-2">
         <h3 class="heading">
           Recommendation
         </h3>
-        <h3 class="sub-heading text-muted mt-2">
+        <h3 class="sub-heading mt-2">
           Discover Movies and Songs you Might Love
         </h3>
         <h3 class="text-muted mt-5">
@@ -56,7 +66,9 @@
 
     <div class="row text-center">
       <div class="col-md-6 col-12">
-        <modal name="prediction-modal">
+        <modal 
+            name="prediction-modal"
+        >
           <div class="margin-top px-5 mx-5">
             <div>
               <router-link to="songs-recommendation">
@@ -84,7 +96,13 @@
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.illustration{
+    width: 450px;
+    height: 450px;
+    margin: 5px;
+}
+</style>
 
 <script>
 export default {

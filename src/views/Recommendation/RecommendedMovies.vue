@@ -2,7 +2,7 @@
   <div class="container hero-text-second">
     <div class="row px-3">
       <div class="col-md-12 mb-5 text-center">
-        <h3 class="heading">You Should Checkout These Videos</h3>
+        <h3 class="sub-heading">You Should Checkout These Videos</h3>
       </div>
       <div class="col-md-12" v-for="movie in recommendedMovies" :key="movie.id">
         <Movie

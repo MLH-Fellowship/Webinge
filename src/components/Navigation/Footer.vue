@@ -1,5 +1,5 @@
 <template>
-  <div class="my-footer text-center hero-text-first py-1 shadow">
+  <div class="my-footer text-center hero-text-first py-1">
     <div class="row  m-4">
       <div class="col-12">
         <p>
@@ -26,8 +26,4 @@ export default {
   bottom: 0;
 }
 
-.fa-heart {
-  font-size: 1.4rem;
-  color: #10d48e;
-}
 </style>
