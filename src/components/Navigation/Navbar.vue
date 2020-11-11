@@ -1,10 +1,20 @@
 <template>
-  <nav class="navbar navbar-expand-lg py-3 fixed px-5 shadow" id="header">
-    <a href="#" @click="back" v-if="hide_nav_brand">
+  <nav 
+    class="navbar navbar-expand-lg py-3 fixed px-5 shadow" 
+    id="header"
+  >
+    <a
+         href="#" 
+         @click="back" 
+         v-if="hide_nav_brand"
+    >
       <i class="fa fa-arrow-left" aria-hidden="true"></i>
     </a>
 
-    <h4 v-if="hide_nav_brand" class="mt-3 title">
+    <h4 
+        v-if="hide_nav_brand" 
+        class="mt-3 title"
+        >
       {{ title }}
     </h4>
 
@@ -13,7 +23,19 @@
       class="dynamic-brand navbar-brand"
       v-if="!hide_nav_brand"
     >
-      Webinge
+      webinge
+    </router-link>
+
+    <router-link 
+        to=""
+        v-if="!hide_nav_brand"
+        class="ml-auto"
+    >
+        <button class="btn abt-btn" >
+            <div class="text">
+              About Us
+            </div>
+        </button>
     </router-link>
   </nav>
 </template>
@@ -47,6 +69,8 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
 a {
   text-decoration: none;
 }
@@ -54,6 +78,7 @@ a {
   font-weight: bold;
   font-size: 3rem;
   color: #007f37;
+  font-family: 'Paytone One', sans-serif;
 }
 
 .fa-arrow-left {

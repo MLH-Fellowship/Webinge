@@ -13,6 +13,24 @@
         />
       </div>
     </div>
+
+    <div class="row px-3 hero-text-second">
+        <div class="col-12 mb-5 text-center">
+            <h3 class="sub-heading text-center">
+                Want Some Songs Recommendation Too ?
+            </h3>
+            <h3 class="sub-heading text-muted text-center">
+                click the button below 
+            </h3>
+            <router-link to="songs-recommendation">
+                <button class="btn mt-5 px-4 py-2 cta-btn">
+                    <div class="text">
+                        Get Started
+                    </div>
+                </button>
+            </router-link>
+        </div>
+    </div>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
-    <div class="row px-3 hero-text-second">
-      <div class="col-md-6 col-12 px-md-5 px-2">
+  <div class="container-fluid">
+    <div class="row  px-5 hero-text-second ">
+      <div class="col-md-6 col-12">
         <h3 class="heading">
           Prediction
         </h3>
@@ -23,7 +23,7 @@
         </router-link>
       </div>
 
-      <div class="col-md-6 col-12 text-right">
+      <div class="col-md-6 col-12 text-center">
         <img
           src="../../assets/svg/illustrations/projections.svg"
           class="illustration"
@@ -31,8 +31,8 @@
       </div>
     </div>
 
-    <div class="row px-3 hero-text-second">
-      <div class="col-md-6 col-12 text-left">
+    <div class="row px-5 hero-text-second">
+      <div class="col-md-6 col-12 text-center">
         <img
           src="../../assets/svg/illustrations/search.svg"
           class="illustration"
