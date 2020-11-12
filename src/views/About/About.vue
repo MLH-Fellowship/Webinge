@@ -3,7 +3,7 @@
     <div class="row  px-5 hero-text-second ">
       <div class="col-md-6 col-12">
         <h3 class="sub-heading">
-          The Webing Team
+          The Webinge Team
         </h3>
 
         <h3 class="text-muted mt-5">

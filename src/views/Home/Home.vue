@@ -3,7 +3,7 @@
     <div class="row  px-5 hero-text-second ">
       <div class="col-md-6 col-12">
         <h3 class="heading">
-          Prediction
+          Predict
         </h3>
         <h3 class="sub-heading mt-2">
           Predict The Revenue a Movie Will Generate
@@ -39,9 +39,9 @@
         />
       </div>
 
-      <div class="col-md-6 ml-md-auto col-12 px-md-5 px-2">
+      <div class="col-md-6  col-12">
         <h3 class="heading">
-          Recommendation
+          Recommend
         </h3>
         <h3 class="sub-heading mt-2">
           Discover Movies and Songs you Might Love
@@ -108,8 +108,8 @@
 
 @media only screen and (max-width: 600px) {
 	.illustration {
-        width: 320px;
-        height: 320px;
+        width: 300px;
+        height: 300px;
     }
 }
 </style>
