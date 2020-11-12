@@ -65,7 +65,7 @@ export default new Router({
       props: true,
       meta: {
         hideBrand: true,
-        title: "recommended movies"
+        title: " movies"
       }
     },
 
@@ -85,7 +85,7 @@ export default new Router({
       props: true,
       meta: {
         hideBrand: true,
-        title: "recommended songs"
+        title: "songs"
       }
     }
   ]

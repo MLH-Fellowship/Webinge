@@ -28,6 +28,14 @@ img {
   width: 300px;
   filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.09));
 }
+
+@media only screen and (max-width: 600px) {
+	img {
+        height: 200px;
+        width: 240px;
+        filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.09));
+    }
+}
 </style>
 
 <script>
