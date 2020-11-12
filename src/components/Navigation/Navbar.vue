@@ -27,7 +27,7 @@
     </router-link>
 
     <router-link 
-        to=""
+        to="/about"
         v-if="!hide_nav_brand"
         class="ml-auto"
     >

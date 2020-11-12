@@ -8,7 +8,7 @@
 
     <router-view />
 
-    <FooterComponent />
+    <FooterComponent v-if="show_footer"/>
   </div>
 </template>
 
@@ -35,13 +35,13 @@ export default {
     $route: function(value) {
       if (value.meta.hideBrand) {
         this.hide_nav_brand = true;
+        this.show_footer = false;
         this.title = value.meta.title;
       } else {
         this.hide_nav_brand = false;
+        this.show_footer=true;
         this.title = null;
       }
-
-      this.show_footer = !value.meta.hideFooter;
     }
   }
 };

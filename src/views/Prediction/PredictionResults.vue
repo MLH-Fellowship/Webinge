@@ -1,5 +1,11 @@
 <template>
-  <modal name="my-first-modal" class=" text-center" @click="close">
+  <modal 
+    name="my-first-modal" 
+    class=" text-center" 
+    :width="400"
+    :height="350"
+    :adaptive="true"
+    @click="close">
     <a href="javascript:void(0)" class="closebtn mb-5" @click="close">
       &times;
     </a>
@@ -67,8 +73,8 @@ export default {
 
   data() {
     return {
-      upperRange: this.predictedRevenue + 1000,
-      lowerRange: this.predictedRevenue + 1000
+      upperRange: this.predictedRevenue + 100000,
+      lowerRange: this.predictedRevenue - 100000
     };
   },
 

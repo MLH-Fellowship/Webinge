@@ -23,19 +23,19 @@
         </router-link>
       </div>
 
-      <div class="col-md-6 col-12 text-center">
+      <div class="col-md-6 col-12 text-left text-md-center">
         <img
           src="../../assets/svg/illustrations/projections.svg"
-          class="illustration"
+          class="illustration p-0 m-0"
         />
       </div>
     </div>
 
     <div class="row px-5 hero-text-second">
-      <div class="col-md-6 col-12 text-center">
+      <div class="col-md-6 col-12 text-left text-md-center">
         <img
           src="../../assets/svg/illustrations/search.svg"
-          class="illustration"
+          class="illustration p-0 m-0"
         />
       </div>
 
@@ -66,13 +66,18 @@
 
     <div class="row text-center">
       <div class="col-md-6 col-12">
-        <modal name="prediction-modal">
+        <modal 
+            name="prediction-modal"
+            :width="400"
+            :height="350"
+            :adaptive="true"
+        >
           <div class="margin-top px-5 mx-5">
             <div>
               <router-link to="songs-recommendation">
                 <button class="btn btn-block mt-5 mb-5" type="submit">
                   <div class="text">
-                    Get Songs Recommendation
+                    Discover Songs
                   </div>
                 </button>
               </router-link>
@@ -82,7 +87,7 @@
               <router-link to="movies-recommendation">
                 <button class="btn btn-block mb-5 mt-5" type="submit">
                   <div class="text">
-                    Get Movies Recommendation
+                    Discover Movies
                   </div>
                 </button>
               </router-link>
@@ -99,6 +104,13 @@
   width: 450px;
   height: 450px;
   margin: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+	.illustration {
+        width: 320px;
+        height: 320px;
+    }
 }
 </style>
 

@@ -11,6 +11,7 @@ import SongsRecommendation from "@/views/Recommendation/SongsRecommendation.vue"
 import RecommendedSongs from "@/views/Recommendation/RecommendedSongs.vue";
 
 import Home from "@/views/Home/Home.vue";
+import About from "@/views/About/About.vue";
 
 Vue.use(Router);
 
@@ -22,6 +23,12 @@ export default new Router({
       path: "/",
       name: "home",
       component: Home
+    },
+
+    {
+        path: "/about",
+        name: "about",
+        component: About
     },
 
     {
